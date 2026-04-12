@@ -80,7 +80,7 @@ nav a {
   align-items: center;
   justify-content: space-between;
   padding: 60px;
-  max-width: 1200px;   /* THIS is the key */
+  max-width: 1400px;   /* THIS is the key */
     margin: 0 auto;      /* centers everything */
 
     padding: 60px 20px;  /* less side padding */
@@ -88,7 +88,7 @@ nav a {
 
 }
 .hero-text h1 {
-  font-size: 48px;
+  font-size: 56px;
   line-height: 1.2;
 }
 .hero-text span {
@@ -105,8 +105,8 @@ nav a {
 
 /* blob shape */
 .hero-img {
-    width: 350px;
-    height: 350px;
+    width: 450px;
+    height: 450px;
     border-radius: 60% 40% 55% 45% / 55% 60% 40% 45%;
     overflow: hidden;
     background: #eee;
@@ -181,7 +181,7 @@ nav a {
 .features {
   display: flex;
   gap: 20px;
-  padding: 40px 60px;
+  padding: 40px 60px 0 0 ;
   justify-content: center;
   flex-wrap: wrap;
 }
