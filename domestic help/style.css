@@ -601,3 +601,29 @@ nav a {
   stroke: currentColor;
   fill: currentColor;
 }
+
+
+/* grid fix using flex */
+.why-grid{
+  display: flex;  
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.top-flex{
+  display: flex;  
+  flex-direction: row;
+  gap: 20px;
+}
+
+.bottom-flex{
+  display: flex;  
+  flex-direction: row;
+  gap: 20px;
+}
+
+
+
+
+
