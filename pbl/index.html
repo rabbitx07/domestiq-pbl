@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Domestiq</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<header>
+  <h2>Domestiq</h2>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#services">Services</a>
+    <a href="#booking">Book</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero fade-in">
+  <div class="container">
+    <h1>Find trusted home services</h1>
+    <p>Book maids, cooks & more instantly</p>
+    <button onclick="scrollToBooking()">Get Started</button>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <h2>Our Services</h2>
+
+    <div class="card-grid">
+      <div class="service-card fade-in">
+        <i class="fa-solid fa-broom"></i>
+        <h3>Maid</h3>
+        <p>Cleaning & Housekeeping</p>
+      </div>
+
+      <div class="service-card fade-in">
+        <i class="fa-solid fa-utensils"></i>
+        <h3>Cook</h3>
+        <p>Home cooking services</p>
+      </div>
+
+      <div class="service-card fade-in">
+        <i class="fa-solid fa-baby"></i>
+        <h3>Babysitter</h3>
+        <p>Child care support</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- WHY CHOOSE US-->
+<section>
+  <div class="container">
+    <h2>Why Choose Us</h2>
+
+    <div class="card-grid">
+      <div class="card">
+        <h4>✔ Verified Workers</h4>
+        <p>All workers are background checked</p>
+      </div>
+
+      <div class="card">
+        <h4>⚡ Quick Booking</h4>
+        <p>Book services in seconds</p>
+      </div>
+
+      <div class="card">
+        <h4>💰 Affordable</h4>
+        <p>Best prices guaranteed</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- BOOKING -->
+<section id="booking" class="section-alt">
+  <div class="container">
+    <h2>Book a Service</h2>
+
+    <form>
+      <input type="text" placeholder="Your Name" />
+
+      <select>
+        <option>Select service</option>
+        <option>Maid</option>
+        <option>Cook</option>
+        <option>Babysitter</option>
+      </select>
+
+      <input type="number" placeholder="Budget" />
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</section>
+
+<!-- WORKERS -->
+<section>
+  <div class="container">
+    <h2>Available Workers</h2>
+
+    <div class="card-grid">
+
+      <div class="card fade-in">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg">
+        <h4>Ramesh</h4>
+        <p>Service: Maid</p>
+        <p>Charge: ₹500</p>
+      </div>
+
+      <div class="card fade-in">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg">
+        <h4>Sunita</h4>
+        <p>Service: Cook</p>
+        <p>Charge: ₹1500</p>
+      </div>
+
+      <div class="card fade-in">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg">
+        <h4>Arushi</h4>
+        <p>Service: Babysitter</p>
+        <p>Charge: ₹2300</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ADMIN -->
+<section class="admin hidden" id="adminSection">
+  <div class="container">
+    <h2>Admin Panel</h2>
+
+    <input type="text" placeholder="Worker Name" />
+    <input type="text" placeholder="Service" />
+    <input type="number" placeholder="Charge" />
+
+    <button>Add Worker</button>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container">
+    <h2>What People Say</h2>
+
+    <div class="card-grid">
+      <div class="card">
+        <p>⭐⭐⭐⭐⭐</p>
+        <p>"Amazing service, very reliable!"</p>
+        <h4>- Aditi</h4>
+      </div>
+
+      <div class="card">
+        <p>⭐⭐⭐⭐⭐</p>
+        <p>"Booked a cook in minutes!"</p>
+        <h4>- Rahul</h4>
+      </div>
+
+      <div class="card">
+        <p>⭐⭐⭐⭐⭐</p>
+        <p>"Very professional workers."</p>
+        <h4>- Sneha</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Domestiq :)</p>
+</footer>
+
+<!-- JS -->
+<script>
+
+// 🔥 FORM SUBMIT
+document.querySelector("form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.querySelector("input[type='text']").value;
+    const service = document.querySelector("select").value;
+
+    if (!name || service === "Select service") {
+        alert("Please fill all fields");
+        return;
+    }
+
+    alert(`Booking confirmed for ${name} 🎉`);
+});
+
+// ⚡ FILTER WORKERS
+document.querySelector("select").addEventListener("change", function() {
+    const selected = this.value.toLowerCase();
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+        const service = card.getAttribute("data-service");
+
+        if (!selected || selected === "select service") {
+            card.style.display = "block";
+        } else if (service === selected) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+});
+
+// 🎯 SMOOTH SCROLL BUTTON
+function scrollToBooking() {
+    document.getElementById("booking").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+</script>
+
+</body>
+</html>

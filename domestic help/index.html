@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cleaning Service</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+  <h2>DomestiQ</h2>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+    <div class="buttons">
+    <a href="login.html"><button class="button ordinary">Log In</button></a>
+    <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"  class="button green">Book Now</button>
+  </div>
+</header>
+
+<section id="home" class="hero">
+  <div class="hero-text">
+    <h1>Enjoy The Best <br> <span>Cleaning</span> <br>Service</h1>
+    <p>We provide high quality eco-friendly cleaning services.</p>
+    <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"  class="btn-primary">Book Now</button>
+    
+  </div>
+    <!-- IMAGE SIDE -->
+    <div class="hero-wrapper">
+
+        <div class="hero-img">
+            <img src="cleaning-girl.png" alt="cleaner">
+        </div>
+
+        <div class="badge">
+            <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M12 3l7 4v5c0 5-3.5 9-7 9s-7-4-7-9V7l7-4z"
+                          stroke="white" stroke-width="2"/>
+                    <path d="M9 12l2 2 4-4"
+                          stroke="white" stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="badge-text">
+                <span class="small">CERTIFIED</span>
+                <span class="big">ECO-CLEANERS</span>
+          </div>
+         </div>
+</section>
+
+<section id="services" class="features">
+  <div class="card">
+    <i class="fas fa-house"></i>
+    <span>Home Cleaning</span>
+  </div>
+
+  <div class="card">
+    <i class="fas fa-building"></i>
+    <span>Office Cleaning</span>
+  </div>
+
+  <div class="card">
+    <i class="fas fa-kitchen-set"></i>
+    <span>Kitchen Cleaning</span>
+  </div>
+</section>
+
+<section class="stats">
+    <div class="stats-container">
+        <div class="stat">
+            <h2>2760+</h2>
+            <p>Total Customer</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="stat">
+            <h2>122+</h2>
+            <p>Years Experience</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="stat">
+            <h2>100%</h2>
+            <p>Service Satisfaction</p>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="why">
+
+  <h2>Why Choose Our <span>Service</span></h2>
+  <p class="sub">We provide the best cleaning experience with trained professionals.</p>
+
+  <div class="why-grid">
+
+    <!-- LEFT BIG -->
+    <div class="why-card large">
+      <div class="icon-box">🌿</div>
+      <h3>Eco-Friendly Cleaning Solutions</h3>
+      <p>Our cleaning products are 100% biodegradable and safe for your home.</p>
+    </div>
+
+    <!-- RIGHT GREEN -->
+    <div class="why-card green">
+      <h3>Fastest Online Booking</h3>
+      <p>Book your premium clean in less than 60 seconds with our streamlined interface.</p>
+      <button>Start Now</button>
+    </div>
+
+    <!-- LEFT SMALL IMAGE -->
+    <div class="why-card img-card">
+      <img src="attention.png" />
+      <h4>Attention to Detail</h4>
+      <p>Every corner cleaned with precision.</p>
+    </div>
+
+    <!-- RIGHT WIDE -->
+    <div class="why-card wide">
+      <div class="wide-text">
+        <h3>Trusted Professionals</h3>
+        <p>Each member undergoes rigorous training and background checks.</p>
+
+        <div class="checks">
+          <span>✔ Fully Insured</span>
+          <span>✔ Background Checked</span>
+        </div>
+      </div>
+    <div class="wide-img">
+      <img src="cleaner.png"/>
+    </div>
+
+  </div>
+</section>
+<section id="contact" class="contact">
+
+  <h2>Contact <span>Us</span></h2>
+  <p class="sub">Have questions? We’re here to help you.</p>
+
+  <div class="contact-container">
+
+    <!-- LEFT INFO -->
+    <div class="contact-info">
+      <h3>Get In Touch</h3>
+      <p>Reach out to us for bookings, queries or support.</p>
+
+      <div class="info-item">
+        📍 <span>Dehradun, India</span>
+      </div>
+
+      <div class="info-item">
+        📞 <span>+91 98765 43210</span>
+      </div>
+
+      <div class="info-item">
+        ✉️ <span>support@cleaning.com</span>
+      </div>
+    </div>
+
+    <!-- RIGHT FORM -->
+    <form class="contact-form">
+
+      <div class="input-group">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+      </div>
+
+      <input type="text" placeholder="Subject">
+
+      <textarea rows="5" placeholder="Your Message"></textarea>
+
+      <button type="submit">Send Message</button>
+
+    </form>
+
+  </div>
+
+</section>
+<footer class="footer">
+
+  <div class="mainContainer">
+
+    <!-- Column 1 -->
+    <div class="container">
+      <h2>DomestiQ</h2>
+      <p>
+        Transforming spaces into clean, breathable canvases for life and work.
+      </p>
+
+      <button class="icon icon-outline">
+        <!-- Share Icon -->
+        <svg viewBox="0 0 24 24" fill="none">
+          <circle cx="7" cy="12" r="2" stroke="currentColor"/>
+          <circle cx="17" cy="6" r="2" stroke="currentColor"/>
+          <circle cx="17" cy="18" r="2" stroke="currentColor"/>
+          <path d="M15 7L8.5 11" stroke="currentColor" stroke-linecap="round"/>
+          <path d="M8.5 13.5L15 17" stroke="currentColor" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="container">
+      <h2>Service</h2>
+      <ul>
+        <li>Home Cleaning</li>
+        <li>Office Cleaning</li>
+        <li>Kitchen Cleaning</li>
+      </ul>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="container">
+      <h2>Company</h2>
+      <ul>
+        <li>About Us</li>
+        <li>Careers</li>
+        <li>Privacy Policy</li>
+      </ul>
+    </div>
+
+    <!-- Column 4 -->
+    <div class="container">
+      <h2>Newsletter</h2>
+      <p>Stay Updated with our latest offers</p>
+
+      <div class="mail">
+        <input type="text" placeholder="Email" />
+
+        <button class="icon icon-green">
+          <!-- Send Icon -->
+          <svg viewBox="0 0 19 16">
+            <path d="M0 16V0L19 8L0 16ZM2 13L13.85 8L2 3V6.5L8 8L2 9.5V13Z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="horizontalBorder">
+    <p>© 2026 DomestiQ Cleaning. All rights reserved.</p>
+
+    <div class="links">
+      <p>Cookie Policy</p>
+    </div>
+  </div>
+
+</footer>
+<script>
+  
+</script>
+</body>
+</html>
+
+
