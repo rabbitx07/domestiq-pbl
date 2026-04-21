@@ -67,7 +67,7 @@ git clone https://github.com/your-username/domestiq-pbl.git
 
 ## 🎯 Future Improvements
 
-* 🔐 Login & Registration System
+
 * 📅 Booking System with Time Slots
 * 📍 Location-based Services
 * 💳 Payment Integration
