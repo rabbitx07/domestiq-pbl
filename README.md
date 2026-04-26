@@ -23,8 +23,6 @@ A modern web-based platform that connects users with trusted home service profes
 
 ---
 
-## 📸 Screenshots
-
 ### 🔹 Hero Section
 
 Showcases all home services in one place with a modern layout.
