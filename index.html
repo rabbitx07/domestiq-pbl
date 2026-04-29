@@ -11,12 +11,13 @@
 <body>
 
 <header>
-  <h2>DomestiQ</h2>
+  <h2>Domestic Help & Maintenance</h2>
   <nav>
     <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#contact">Contact</a>
+    <span id="userDisplay"></span>
   </nav>
     <div class="buttons">
     <a href="login.html"><button class="button ordinary">Log In</button></a>
@@ -26,32 +27,49 @@
 
 <section id="home" class="hero">
   <div class="hero-text">
-    <h1>Enjoy The Best <br> <span>Cleaning</span> <br>Service</h1>
-    <p>We provide high quality eco-friendly cleaning services.</p>
+    <h1>All Your <br> <span>Home Services</span> <br>In One Place</h1>
+<p>From cleaning to repairs and personal help — we’ve got your home covered.</p>
     <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"  class="btn-primary">Book Now</button>
 
       <section id="services" class="features">
-        <div class="card">
-          <i class="fas fa-house"></i>
-          <span>Home Cleaning</span>
-        </div>
 
-        <div class="card">
-          <i class="fas fa-building"></i>
-          <span>Office Cleaning</span>
-        </div>
+<div class="card" onclick="selectService('Cleaning')">
+  <i class="fas fa-broom"></i>
+  <span>Cleaning</span>
+</div>
 
-        <div class="card">
-          <i class="fas fa-kitchen-set"></i>
-          <span>Kitchen Cleaning</span>
-        </div>
-      </section>
+<div class="card" onclick="selectService('Plumbing')">
+  <i class="fas fa-wrench"></i>
+  <span>Plumbing</span>
+</div>
+
+<div class="card" onclick="selectService('Electrician')">
+  <i class="fas fa-bolt"></i>
+  <span>Electrician</span>
+</div>
+
+<div class="card" onclick="selectService('Babysitter')">
+  <i class="fas fa-child"></i>
+  <span>Babysitter</span>
+</div>
+
+<div class="card" onclick="selectService('Cook')">
+  <i class="fas fa-utensils"></i>
+  <span>Cook</span>
+</div>
+
+<div class="card" onclick="selectService('Maid')">
+  <i class="fas fa-user"></i>
+  <span>Maid</span>
+</div>
+
+</section>
   </div>
     <!-- IMAGE SIDE -->
     <div class="hero-wrapper">
 
         <div class="hero-img">
-            <img src="cleaning-girl.png" alt="cleaner">
+            <img src="home.png" alt="cleaner">
         </div>
 
         <div class="badge">
@@ -66,8 +84,8 @@
                 </svg>
             </div>
             <div class="badge-text">
-                <span class="small">CERTIFIED</span>
-                <span class="big">ECO-CLEANERS</span>
+                <span class="small">PREMIUM</span>
+                <span class="big">HOME SERVICES</span>
           </div>
          </div>
 </section>
@@ -95,52 +113,145 @@
     </div>
 </section>
 
+<!--WHY CHOOSE US -->
+
 <section id="about" class="why">
 
-  <h2>Why Choose Our <span>Service</span></h2>
-  <p class="sub">We provide the best cleaning experience with trained professionals.</p>
+  <h2>Why Choose <span>Domestic Help & Maintenance</span></h2>
+  <p class="sub">We make home services simple, reliable, and stress-free.</p>
 
-  <div class="why-grid">
-    <!-- LEFT BIG -->
-    <div class="top-flex">
-      <div class="why-card large">
-        <div class="icon-box">🌿</div>
-        <h3>Eco-Friendly Cleaning Solutions</h3>
-        <p>Our cleaning products are 100% biodegradable and safe for your home.</p>
-      </div>
+  <div class="why-container">
 
-      <!-- RIGHT GREEN -->
-      <div class="why-card green">
-        <h3>Fastest Online Booking</h3>
-        <p>Book your premium clean in less than 60 seconds with our streamlined interface.</p>
-        <button>Start Now</button>
-      </div>
+    <!-- LEFT IMAGE -->
+    <div class="why-image">
+      <img src="why.png" alt="service">
     </div>
-    <div class="bottom-flex">
-      <!-- LEFT SMALL IMAGE -->
-      <div class="why-card img-card">
-        <img src="attention.png" />
-        <h4>Attention to Detail</h4>
-        <p>Every corner cleaned with precision.</p>
-      </div>
 
-      <!-- RIGHT WIDE -->
-      <div class="why-card wide">
-        <div class="wide-text">
-          <h3>Trusted Professionals</h3>
-          <p>Each member undergoes rigorous training and background checks.</p>
+    <!-- RIGHT CONTENT -->
+    <div class="why-content">
 
-          <div class="checks">
-            <span>✔ Fully Insured</span>
-            <span>✔ Background Checked</span>
-          </div>
+      <div class="why-item">
+        <div class="icon">✔</div>
+        <div>
+          <h3>Verified Professionals</h3>
+          <p>All workers are background-checked and trained.</p>
         </div>
-      <div class="wide-img">
-        <img src="cleaner.png"/>
       </div>
+
+      <div class="why-item">
+        <div class="icon">⚡</div>
+        <div>
+          <h3>Quick Booking</h3>
+          <p>Book any service in less than 60 seconds.</p>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="icon">💰</div>
+        <div>
+          <h3>Affordable Pricing</h3>
+          <p>No hidden charges. Transparent pricing always.</p>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="icon">🛡</div>
+        <div>
+          <h3>Trusted & Safe</h3>
+          <p>Your safety and satisfaction are our top priority.</p>
+        </div>
+      </div>
+
     </div>
+
   </div>
+
 </section>
+
+<!--WORKERS-->
+<section class="workers">
+
+  <h2>Our <span>Professionals</span></h2>
+  <p class="sub">Verified experts ready to help you anytime</p>
+
+  <div class="worker-grid">
+
+    <!-- CARD -->
+    <div class="worker-card">
+      <div class="img-box">
+        <span class="tag green">Cleaning</span>
+        <img src="clean.png">
+      </div>
+      <h3>Sneha Kapoor</h3>
+      <p>House Cleaner</p>
+      <div class="rating">⭐ 4.6 <span>| 85 jobs</span></div>
+      <button onclick="viewProfile('Sneha Kapoor','House Cleaner','4.6','85')">
+        
+  View Profile
+</button>
+    </div>
+
+    <div class="worker-card">
+      <div class="img-box">
+        <span class="tag blue">Plumbing</span>
+        <img src="plumber.png">
+      </div>
+      <h3>Amit Joshi</h3>
+      <p>Plumber</p>
+      <div class="rating">⭐ 4.7 <span>| 110 jobs</span></div>
+      <button onclick="viewProfile('Amit Joshi','Plumber','4.7','110')">View Profile</button>
+    </div>
+
+    <div class="worker-card">
+      <div class="img-box">
+        <span class="tag orange">Electrician</span>
+        <img src="elect.png">
+      </div>
+      <h3>Ravi Mehta</h3>
+      <p>Electrician</p>
+      <div class="rating">⭐ 4.5 <span>| 92 jobs</span></div>
+      <button onclick="viewProfile('Ravi Mehta','Electrician','4.5','92')">View Profile</button>
+    </div>
+
+    <div class="worker-card">
+      <div class="img-box">
+        <span class="tag purple">Cook</span>
+        <img src="cook.png">
+      </div>
+      <h3>Neha Verma</h3>
+      <p>Cook</p>
+      <div class="rating">⭐ 4.9 <span>| 140 jobs</span></div>
+      <button onclick="viewProfile('Neha Verma','Cook','4.9','140')">View Profile</button>
+    </div>
+
+    <div class="worker-card">
+      <div class="img-box">
+        <span class="tag pink">Babysitter</span>
+        <img src="babysit.png">
+      </div>
+      <h3>Pooja Singh</h3>
+      <p>Babysitter</p>
+      <div class="rating">⭐ 4.8 <span>| 160 jobs</span></div>
+      <button onclick="viewProfile('Pooja Singh','Babysitter','4.8','160')">View Profile</button>
+
+    </div>
+
+    <div class="worker-card">
+      <div class="img-box">
+        <span class="tag brown">Maid</span>
+        <img src="maid.png">
+      </div>
+      <h3>Karan Malhotra</h3>
+      <p>Maid</p>
+      <div class="rating">⭐ 4.6 <span>| 100 jobs</span></div>
+      <button onclick="viewProfile('Karan Malhotra','Maid','4.6','100')">View Profile</button>
+    </div>
+
+  </div>
+
+</section>
+
+<!--CONTACT-->
 <section id="contact" class="contact">
 
   <h2>Contact <span>Us</span></h2>
@@ -191,7 +302,7 @@
 
     <!-- Column 1 -->
     <div class="container">
-      <h2>DomestiQ</h2>
+      <h2>Domestic Help & Maintenance</h2>
       <p>
         Transforming spaces into clean, breathable canvases for life and work.
       </p>
@@ -212,9 +323,11 @@
     <div class="container">
       <h2>Service</h2>
       <ul>
-        <li>Home Cleaning</li>
-        <li>Office Cleaning</li>
-        <li>Kitchen Cleaning</li>
+        <li>Cleaning</li>
+<li>Plumbing</li>
+<li>Electrician</li>
+<li>Babysitting</li>
+<li>Cooking</li>
       </ul>
     </div>
 
@@ -257,10 +370,59 @@
   </div>
 
 </footer>
+
+<div id="profileModal" class="modal">
+  <div class="modal-content">
+    <h3 id="pName"></h3>
+    <p id="pRole"></p>
+    <p id="pRating"></p>
+    <button onclick="closeProfile()">Close</button>
+  </div>
+</div>
+
+<!--JS-->
 <script>
+function selectService(service){
+
+  document.querySelectorAll(".worker-card").forEach(card=>{
+    if(card.innerText.includes(service)){
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+
+  document.querySelector(".workers").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+function viewProfile(name, role, rating, jobs){
+  document.getElementById("profileModal").style.display = "flex";
+
+  document.getElementById("pName").innerText = name;
+  document.getElementById("pRole").innerText = role;
+  document.getElementById("pRating").innerText =
+    "⭐ " + rating + " | " + jobs + " jobs";
+}
+
+function closeProfile(){
+  document.getElementById("profileModal").style.display = "none";
+
+}
+function openBooking(service){
+  localStorage.setItem("selectedService", service);
+  document.getElementById("bookingModal").style.display = "flex";
+}
+document.getElementById("serviceName").innerText =
+  localStorage.getItem("selectedService");
   
+let user = localStorage.getItem("userEmail");
+
+if(user){
+  document.getElementById("userDisplay").innerText = "Hi, " + user;
+}
 </script>
 </body>
 </html>
-
 

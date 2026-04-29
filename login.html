@@ -33,6 +33,24 @@
   </div>
 
 </div>
+<script>
+function login(){
+  let email = document.getElementById("email").value;
+  let pass = document.getElementById("password").value;
 
+  if(email === "" || pass === ""){
+    alert("Fill all fields");
+    return;
+  }
+
+  // SAVE DATA
+  localStorage.setItem("userEmail", email);
+
+  alert("Login Successful!");
+
+  // redirect to home page
+  window.location.href = "index.html";
+}
+</script>
 </body>
 </html>
