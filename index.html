@@ -63,6 +63,8 @@
   <span>Maid</span>
 </div>
 
+
+
 </section>
   </div>
     <!-- IMAGE SIDE -->
@@ -167,88 +169,67 @@
 
 </section>
 
-<!--WORKERS-->
-<section class="workers">
+<!-- FILTER -->
+<div class="filter-bar">
 
-  <h2>Our <span>Professionals</span></h2>
-  <p class="sub">Verified experts ready to help you anytime</p>
+  <!-- LOCATION FILTER -->
+  <div class="location-filter">
+    <p>Location:</p>
+    <button onclick="filterArea('all')">All</button>
+    <button onclick="filterArea('Rajpur Road')">Rajpur Road</button>
+    <button onclick="filterArea('Ballupur')">Ballupur</button>
+    <button onclick="filterArea('Prem Nagar')">Prem Nagar</button>
+    <button onclick="filterArea('Clement Town')">Clement Town</button>
+    <button onclick="filterArea('ISBT')">ISBT</button>
+    <button onclick="filterArea('Sahastradhara')">Sahastradhara</button>
+    <button onclick="filterArea('Dalanwala')">Dalanwala</button>
+    <button onclick="filterArea('Doiwala')">Doiwala</button>
+    <button onclick="filterArea('Kargi Chowk')">Kargi Chowk</button>
+    <button onclick="filterArea('Race Course')">Race Course</button>
+  </div>
 
-  <div class="worker-grid">
+  <!-- SORT SECTION -->
+  <div class="sort-container">
 
-    <!-- CARD -->
-    <div class="worker-card">
-      <div class="img-box">
-        <span class="tag green">Cleaning</span>
-        <img src="images /clean.png">
-      </div>
-      <h3>Sneha Kapoor</h3>
-      <p>House Cleaner</p>
-      <div class="rating">⭐ 4.6 <span>| 85 jobs</span></div>
-      <button onclick="viewProfile('Sneha Kapoor','House Cleaner','4.6','85')">
-        
-  View Profile
-</button>
+    <div>
+      <p>Sort by Price:</p>
+      <button onclick="sortWorkers('priceLow')">Low → High</button>
+      <button onclick="sortWorkers('priceHigh')">High → Low</button>
     </div>
 
-    <div class="worker-card">
-      <div class="img-box">
-        <span class="tag blue">Plumbing</span>
-        <img src="images /plumber.png">
-      </div>
-      <h3>Amit Joshi</h3>
-      <p>Plumber</p>
-      <div class="rating">⭐ 4.7 <span>| 110 jobs</span></div>
-      <button onclick="viewProfile('Amit Joshi','Plumber','4.7','110')">View Profile</button>
-    </div>
-
-    <div class="worker-card">
-      <div class="img-box">
-        <span class="tag orange">Electrician</span>
-        <img src="images /elect.png">
-      </div>
-      <h3>Ravi Mehta</h3>
-      <p>Electrician</p>
-      <div class="rating">⭐ 4.5 <span>| 92 jobs</span></div>
-      <button onclick="viewProfile('Ravi Mehta','Electrician','4.5','92')">View Profile</button>
-    </div>
-
-    <div class="worker-card">
-      <div class="img-box">
-        <span class="tag purple">Cook</span>
-        <img src="images /cook.png">
-      </div>
-      <h3>Neha Verma</h3>
-      <p>Cook</p>
-      <div class="rating">⭐ 4.9 <span>| 140 jobs</span></div>
-      <button onclick="viewProfile('Neha Verma','Cook','4.9','140')">View Profile</button>
-    </div>
-
-    <div class="worker-card">
-      <div class="img-box">
-        <span class="tag pink">Babysitter</span>
-        <img src="images /babysit.png">
-      </div>
-      <h3>Pooja Singh</h3>
-      <p>Babysitter</p>
-      <div class="rating">⭐ 4.8 <span>| 160 jobs</span></div>
-      <button onclick="viewProfile('Pooja Singh','Babysitter','4.8','160')">View Profile</button>
-
-    </div>
-
-    <div class="worker-card">
-      <div class="img-box">
-        <span class="tag brown">Maid</span>
-        <img src="images /maid.png">
-      </div>
-      <h3>Karan Malhotra</h3>
-      <p>Maid</p>
-      <div class="rating">⭐ 4.6 <span>| 100 jobs</span></div>
-      <button onclick="viewProfile('Karan Malhotra','Maid','4.6','100')">View Profile</button>
+    <div>
+      <p>Sort by Rating:</p>
+      <button onclick="sortWorkers('ratingLow')">Low → High</button>
+      <button onclick="sortWorkers('ratingHigh')">High → Low</button>
     </div>
 
   </div>
 
+</div>
+
+<!-- WORKERS -->
+<section class="workers">
+  <h2>Our Professionals</h2>
+  <div class="worker-grid" id="workerGrid"></div>
 </section>
+
+<!-- BOOKING MODAL -->
+<div id="bookingModal" class="modal">
+  <div class="modal-content">
+    <h3>Book Service</h3>
+    <p id="workerName"></p>
+    <input id="userName" placeholder="Your Name">
+    <input type="date" id="date">
+    <button onclick="confirmBooking()">Confirm</button>
+    <button onclick="closeBooking()">Cancel</button>
+    <select id="timeSlot">
+  <option>9 AM - 12 PM</option>
+  <option>12 PM - 3 PM</option>
+  <option>3 PM - 6 PM</option>
+  <option>6 PM - 9 PM</option>
+</select>
+  </div>
+</div>
 
 <!--CONTACT-->
 <section id="contact" class="contact">
@@ -381,47 +362,185 @@
 
 <!--JS-->
 <script>
-function selectService(service){
 
-  document.querySelectorAll(".worker-card").forEach(card=>{
-    if(card.innerText.includes(service)){
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
-    }
+const locations = [
+  "Rajpur Road",
+  "Ballupur",
+  "Prem Nagar",
+  "Clement Town",
+  "ISBT",
+  "Sahastradhara",
+  "Dalanwala",
+  "Doiwala",
+  "Kargi Chowk",
+  "Race Course"
+];
+
+const services = ["Cleaning","Plumbing","Electrician","Cook","Babysitter","Maid"];
+
+// FIRST + LAST NAME POOLS
+const firstNames = [
+  "Aman","Rohit","Deepak","Ankit","Vikas","Sahil","Karan","Rahul","Arjun","Vivek",
+  "Nitin","Suresh","Rakesh","Lokesh","Manoj","Ajay","Kunal","Yash","Dev","Harish",
+  "Neha","Pooja","Anjali","Kavita","Meena","Sunita","Geeta","Ritika","Nikita","Shalini",
+  "Pallavi","Komal","Seema","Rekha","Sarita","Anita","Suman","Savita","Tanvi","Megha"
+];
+
+const lastNames = [
+  "Sharma","Verma","Gupta","Singh","Kumar","Joshi","Rawat","Negi","Bisht","Rana",
+  "Thapa","Mehta","Chauhan","Pandey","Bora","Nautiyal","Kapoor","Malhotra","Saxena","Agarwal"
+];
+
+// TRACK USED NAMES
+const usedNames = new Set();
+
+// GENERATE UNIQUE NAME
+function uniqueName(){
+  let name;
+
+  do {
+    const first = firstNames[Math.floor(Math.random() * firstNames.length)];
+    const last = lastNames[Math.floor(Math.random() * lastNames.length)];
+    name = first + " " + last;
+  } while (usedNames.has(name));
+
+  usedNames.add(name);
+  return name;
+}
+
+// ===== 200 WORKERS =====
+const workers = [];
+
+for(let i = 1; i <= 200; i++){
+
+  let service = services[Math.floor(Math.random() * services.length)];
+  let area = locations[Math.floor(Math.random() * locations.length)];
+  let available = Math.random() > 0.3;
+
+  let roleMap = {
+    "Cleaning": "Cleaner",
+    "Plumbing": "Plumber",
+    "Electrician": "Electrician",
+    "Cook": "Cook",
+    "Babysitter": "Babysitter",
+    "Maid": "Maid"
+  };
+
+  let priceMap = {
+    "Cleaning": 400 + Math.floor(Math.random()*200),
+    "Plumbing": 600 + Math.floor(Math.random()*300),
+    "Electrician": 600 + Math.floor(Math.random()*200),
+    "Cook": 700 + Math.floor(Math.random()*300),
+    "Babysitter": 500 + Math.floor(Math.random()*300),
+    "Maid": 400 + Math.floor(Math.random()*200)
+  };
+
+  workers.push({
+    name: uniqueName(),
+    role: roleMap[service],
+    service: service,
+    area: area,
+    available: available,
+    price: priceMap[service],
+    rating: (3 + Math.random()*2).toFixed(1)
   });
+}
 
+// ===== RENDER =====
+function renderWorkers(){
+  let grid = document.getElementById("workerGrid");
+  grid.innerHTML = "";
+
+  workers.forEach(w => {
+    let statusClass = w.available ? "available" : "busy";
+    let statusText = w.available ? "Available" : "Not Available";
+
+    grid.innerHTML += `
+      <div class="worker-card" data-area="${w.area}" data-service="${w.service}">
+        <h3>${w.name}</h3>
+        <p>${w.role}</p>
+        <p class="rating">⭐ ${w.rating}</p>
+        <p class="price">₹${w.price}</p>
+        <p class="location">📍 ${w.area}</p>
+        <p class="status ${statusClass}">● ${statusText}</p>
+        <button onclick="openBooking('${w.name}')">Book Now</button>
+      </div>
+    `;
+  });
+}
+function selectService(service){
+  selectedService = service;
+
+  applyFilters();
+
+  // scroll to workers
   document.querySelector(".workers").scrollIntoView({
     behavior: "smooth"
   });
 }
 
-function viewProfile(name, role, rating, jobs){
-  document.getElementById("profileModal").style.display = "flex";
+// ===== FILTER =====
+let selectedArea = "all";
+let selectedService = "all";
 
-  document.getElementById("pName").innerText = name;
-  document.getElementById("pRole").innerText = role;
-  document.getElementById("pRating").innerText =
-    "⭐ " + rating + " | " + jobs + " jobs";
+function filterArea(area){
+  selectedArea = area;
+  applyFilters();
 }
 
-function closeProfile(){
-  document.getElementById("profileModal").style.display = "none";
+function applyFilters(){
+  document.querySelectorAll(".worker-card").forEach(card=>{
+    let a = card.getAttribute("data-area");
+    let s = card.getAttribute("data-service");
 
+    let matchArea = (selectedArea === "all" || a === selectedArea);
+    let matchService = (selectedService === "all" || s === selectedService);
+
+    card.style.display = (matchArea && matchService) ? "block" : "none";
+  });
 }
-function openBooking(service){
-  localStorage.setItem("selectedService", service);
+
+function resetFilters(){
+  selectedArea = "all";
+  selectedService = "all";
+
+  document.querySelector("select").value = "all";
+
+  applyFilters();
+}
+
+
+// ===== BOOKING =====
+let currentWorker = "";
+
+function openBooking(name){
+  currentWorker = name;
   document.getElementById("bookingModal").style.display = "flex";
+  document.getElementById("workerName").innerText = name;
 }
-document.getElementById("serviceName").innerText =
-  localStorage.getItem("selectedService");
-  
-let user = localStorage.getItem("userEmail");
 
-if(user){
-  document.getElementById("userDisplay").innerText = "Hi, " + user;
+function closeBooking(){
+  document.getElementById("bookingModal").style.display = "none";
 }
+
+function confirmBooking(){
+  let user = document.getElementById("userName").value;
+  let time = document.getElementById("timeSlot").value;
+
+  if(user===""){
+    alert("Enter your name");
+    return;
+  }
+
+  alert(`Booking confirmed with ${currentWorker} at ${time}`);
+  closeBooking();
+}
+
+// INIT
+renderWorkers();
+
 </script>
+
 </body>
 </html>
 
