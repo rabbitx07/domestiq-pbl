@@ -1,39 +1,63 @@
 # 🏠 Domestic Help & Maintenance
 
-A modern web-based platform that connects users with trusted home service professionals such as cleaners, plumbers, electricians, babysitters, cooks, and maids — all in one place.
+A web-based platform that connects users with trusted domestic service professionals such as cleaners, plumbers, electricians, cooks, babysitters, and maids.
+
+This project focuses on delivering a smooth and intuitive user experience with smart filtering, sorting, and booking features using pure HTML, CSS, and JavaScript.
 
 ---
 
 ## 🚀 Features
 
-* 🧹 Multiple Service Categories (Cleaning, Plumbing, Electrical, Babysitting, Cooking, Maid Services)
-* 👩‍🔧 Verified Professional Listings with Ratings & Experience
-* ⭐ Clean and Modern UI Design
-* 📱 Fully Responsive Layout
-* ⚡ Smooth Navigation with Section Linking
-* 🎯 Simple and User-Friendly Interface
+* 🔍 **Advanced Filtering System**
+
+  * Filter workers by **location (10 Dehradun areas)**
+  * Filter by **service type** (Cleaning, Plumbing, etc.)
+
+* 📊 **Sorting Functionality**
+
+  * Sort by **Price (Low → High / High → Low)**
+  * Sort by **Rating (Low → High / High → Low)**
+
+* ⭐ **Ratings System**
+
+  * Dynamic ratings (3.0 – 5.0) assigned to each professional
+
+* 💰 **Transparent Pricing**
+
+  * Service-based realistic pricing for all workers
+
+* 📍 **Location-Based Services**
+
+  * Covers 10 major areas of Dehradun:
+
+    * Rajpur Road, Ballupur, Prem Nagar, Clement Town, ISBT
+    * Sahastradhara, Dalanwala, Doiwala, Kargi Chowk, Race Course
+
+* 👷 **Large Workforce Dataset**
+
+  * 200+ dynamically generated workers with:
+
+    * Unique names
+    * Availability status
+    * Randomized service distribution
+
+* 📅 **Booking System**
+
+  * Book professionals with selectable time slots
+  * Instant confirmation through UI interaction
+
+* 🖼️ **Dynamic Worker Cards**
+
+  * Clean, modern card-based layout
 
 ---
 
-## 🖥️ Tech Stack
+## 🛠️ Tech Stack
 
-* **HTML5**
-* **CSS3**
-* **JavaScript (Basic)**
-
----
-
-### 🔹 Hero Section
-
-Showcases all home services in one place with a modern layout.
-
-### 🔹 Why Choose Us
-
-Highlights trust factors like verified professionals, quick booking, and affordability.
-
-### 🔹 Professionals Section
-
-Displays service providers with categories, ratings, and profile options.
+* **Frontend:** HTML, CSS, JavaScript
+* **Styling:** Custom CSS (Flexbox, Responsive Design)
+* **Icons:** Font Awesome
+* **Data Handling:** JavaScript Arrays & Dynamic Rendering
 
 ---
 
@@ -44,7 +68,10 @@ domestiq-pbl/
 │── index.html
 │── style.css
 │── script.js
-│── assets/
+│── login.html
+│── signup.html
+│── login.css
+│── images/
 ```
 
 ---
@@ -53,32 +80,50 @@ domestiq-pbl/
 
 1. Clone the repository:
 
-```
-git clone https://github.com/your-username/domestiq-pbl.git
-```
+   ```
+   git clone https://github.com/YOUR_USERNAME/domestiq-pbl.git
+   ```
 
 2. Open the project folder
 
-3. Run `index.html` in your browser
+3. Run using Live Server or open:
+
+   ```
+   index.html
+   ```
 
 ---
 
-## 🎯 Future Improvements
+## 🎯 Project Objective
 
+To design a user-friendly platform that simplifies hiring domestic help by providing:
 
-* 📅 Booking System with Time Slots
-* 📍 Location-based Services
-* 💳 Payment Integration
+* Easy discovery of professionals
+* Transparent pricing
+* Efficient booking experience
+
+---
+
+## 🔮 Future Enhancements
+
+* Backend integration (Node.js / Firebase)
+* User authentication with database
+* Payment gateway integration
+* Real-time availability updates
+* Reviews and feedback system
 
 ---
 
 ## 👩‍💻 Author
 
 **Anshika**
-BCA (AI & Data Science) Student
+BCA (AI & Data Science)
+Graphic Era Deemed to be University
 
 ---
 
 ## ⭐ Acknowledgment
 
-This project was created as part of a college assignment and improved as a portfolio project.
+This project is developed as part of academic coursework and demonstrates frontend development, UI/UX design, and interactive system implementation.
+
+---
