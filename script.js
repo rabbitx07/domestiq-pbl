@@ -80,7 +80,7 @@ for(let i = 1; i <= 200; i++){
     area: area,
     available: available,
     price: priceMap[service],
-    rating: (3 + Math.random()*2).toFixed(1)
+    rating: +(3 + Math.random()*2).toFixed(1)
   });
 }
 
@@ -146,7 +146,29 @@ function resetFilters(){
 
   applyFilters();
 }
+function sortWorkers(type){
 
+  console.log("Sorting:", type); // debug (check console)
+
+  if(type === "priceLow"){
+    workers.sort((a,b)=>a.price - b.price);
+  }
+
+  else if(type === "priceHigh"){
+    workers.sort((a,b)=>b.price - a.price);
+  }
+
+  else if(type === "ratingHigh"){
+    workers.sort((a,b)=>b.rating - a.rating);
+  }
+
+  else if(type === "ratingLow"){
+    workers.sort((a,b)=>a.rating - b.rating);
+  }
+
+  renderWorkers();
+  applyFilters();
+}
 
 // ===== BOOKING =====
 let currentWorker = "";
