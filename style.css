@@ -840,3 +840,11 @@ nav a {
   color: white; 
 }
 
+.status.available {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.status.busy {
+  color: red;
+}

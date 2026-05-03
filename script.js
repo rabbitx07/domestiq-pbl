@@ -21,7 +21,7 @@ const firstNames = [
   "Aman","Rohit","Deepak","Ankit","Vikas","Sahil","Karan","Rahul","Arjun","Vivek",
   "Nitin","Suresh","Rakesh","Lokesh","Manoj","Ajay","Kunal","Yash","Dev","Harish",
   "Neha","Pooja","Anjali","Kavita","Meena","Sunita","Geeta","Ritika","Nikita","Shalini",
-  "Pallavi","Komal","Seema","Rekha","Sarita","Anita","Suman","Savita","Tanvi","Megha"
+  "Pallavi","Komal","Seema","Lalita","Sarita","Anita","Suman","Savita","Tanvi","Megha"
 ];
 
 const lastNames = [
@@ -148,8 +148,6 @@ function resetFilters(){
 }
 function sortWorkers(type){
 
-  console.log("Sorting:", type); // debug (check console)
-
   if(type === "priceLow"){
     workers.sort((a,b)=>a.price - b.price);
   }
@@ -164,6 +162,15 @@ function sortWorkers(type){
 
   else if(type === "ratingLow"){
     workers.sort((a,b)=>a.rating - b.rating);
+  }
+
+  // 🔥 NEW PART
+  else if(type === "availableFirst"){
+    workers.sort((a,b)=> b.available - a.available);
+  }
+
+  else if(type === "busyFirst"){
+    workers.sort((a,b)=> a.available - b.available);
   }
 
   renderWorkers();
