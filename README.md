@@ -45,6 +45,15 @@ This project focuses on delivering a smooth and intuitive user experience with s
 
   * Book professionals with selectable time slots
   * Instant confirmation through UI interaction
+    
+* 🧾 Booking History
+Stores bookings using localStorage
+View bookings in a modal popup
+Displays:
+Worker name
+User name
+Date
+Time   
 
 * 🖼️ **Dynamic Worker Cards**
 
