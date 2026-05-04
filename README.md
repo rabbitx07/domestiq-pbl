@@ -67,6 +67,7 @@ Time
 * **Styling:** Custom CSS (Flexbox, Responsive Design)
 * **Icons:** Font Awesome
 * **Data Handling:** JavaScript Arrays & Dynamic Rendering
+* **Storage:** Browser localStorage
 
 ---
 
