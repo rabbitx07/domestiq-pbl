@@ -101,7 +101,10 @@ function renderWorkers(){
         <p class="price">₹${w.price}</p>
         <p class="location">📍 ${w.area}</p>
         <p class="status ${statusClass}">● ${statusText}</p>
-        <button onclick="openBooking('${w.name}')">Book Now</button>
+        ${w.available 
+  ? `<button onclick="openBooking('${w.name}')">Book Now</button>` 
+  : ``
+}
       </div>
     `;
   });
@@ -191,16 +194,55 @@ function closeBooking(){
 }
 
 function confirmBooking(){
+
   let user = document.getElementById("userName").value;
   let time = document.getElementById("timeSlot").value;
+  let date = document.getElementById("bookingDate").value;
 
-  if(user===""){
-    alert("Enter your name");
+  // VALIDATION
+  if(user === "" || date === ""){
+    document.getElementById("successMsg").innerText = "Please fill all details";
     return;
   }
 
-  alert(`Booking confirmed with ${currentWorker} at ${time}`);
-  closeBooking();
+  let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+  bookings.push({
+    worker: currentWorker,
+    user: user,
+    time: time,
+    date: date
+  });
+
+  localStorage.setItem("bookings", JSON.stringify(bookings));
+
+  // 👇 REPLACE ALERT WITH UI MESSAGE
+  document.getElementById("successMsg").innerText =
+    `Booked ${currentWorker} on ${date} at ${time}`;
+
+  // CLEAR INPUTS (so it doesn't remember old data like trauma)
+  document.getElementById("userName").value = "";
+  document.getElementById("bookingDate").value = "";
+  document.getElementById("timeSlot").value = "9 AM - 12 PM";
+
+  // CLOSE AFTER 1.5s (gives user time to see message)
+  setTimeout(() => {
+    closeBooking();
+  }, 1500);
+}
+
+function showBookings(){
+  let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+  let content = bookings.map(b =>
+    `<p><b>${b.user}</b> booked <b>${b.worker}</b><br>
+     📅 ${b.date} | ⏰ ${b.time}</p>`
+  ).join("");
+
+  document.getElementById("bookingList").innerHTML =
+    content || "No bookings yet";
+
+  document.getElementById("bookingViewModal").style.display = "flex";
 }
 
 // INIT

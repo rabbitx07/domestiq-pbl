@@ -18,6 +18,7 @@
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#contact">Contact</a>
+    
     <span id="userDisplay"></span>
   </nav>
     <div class="buttons">
@@ -170,6 +171,10 @@
 
 </section>
 
+<div class="top-controls">
+
+<button onclick="showBookings()">View Bookings</button>
+
 <!-- FILTER -->
 <div class="filter-bar">
 
@@ -213,6 +218,7 @@
   </div>
 
 </div>
+</div>
 
 <!-- WORKERS -->
 <section class="workers">
@@ -226,15 +232,18 @@
     <h3>Book Service</h3>
     <p id="workerName"></p>
     <input id="userName" placeholder="Your Name">
-    <input type="date" id="date">
-    <button onclick="confirmBooking()">Confirm</button>
-    <button onclick="closeBooking()">Cancel</button>
-    <select id="timeSlot">
+
+<input type="date" id="bookingDate">
+
+<select id="timeSlot">
   <option>9 AM - 12 PM</option>
   <option>12 PM - 3 PM</option>
   <option>3 PM - 6 PM</option>
   <option>6 PM - 9 PM</option>
 </select>
+<p id="successMsg"></p>
+<button onclick="confirmBooking()">Confirm</button>
+<button onclick="closeBooking()">Cancel</button>
   </div>
 </div>
 
@@ -366,8 +375,15 @@
     <button onclick="closeProfile()">Close</button>
   </div>
 </div>
-
+<div id="bookingViewModal" class="modal">
+  <div class="modal-content">
+    <h3>Your Bookings</h3>
+    <div id="bookingList"></div>
+    <button onclick="this.parentElement.parentElement.style.display='none'">Close</button>
+  </div>
+</div>
 <script src="script.js"></script>
+
 </body>
 </html>
 
